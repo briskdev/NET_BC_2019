@@ -10,12 +10,17 @@ namespace DAY4_ABSTRACTION
     {
         public override string GetName()
         {
-            throw new NotImplementedException();
+            //1. Returns text “R0B0T”.
+            return "R0B0T";
         }
 
         public override int GuessNumber()
         {
-            throw new NotImplementedException();
+            //1.Generate random number from 1 to 500 and store it as ‘CurrentGuess’;
+            CurrentGuess = new Random().Next(1, 501);
+
+            //2.Return generated number.
+            return CurrentGuess;
         }
     }
 }
