@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAY4_ABSTRACTION
 {
-    interface IPlayer
+    public interface IPlayer
     {
         int GuessNumber();
 

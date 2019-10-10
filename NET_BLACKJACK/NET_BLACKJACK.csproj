@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB468B8D-C974-49DF-B1F3-1F6CADD83CC4}</ProjectGuid>
+    <ProjectGuid>{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DAY4_ABSTRACTION</RootNamespace>
-    <AssemblyName>DAY4_ABSTRACTION</AssemblyName>
+    <RootNamespace>NET_BLACKJACK</RootNamespace>
+    <AssemblyName>NET_BLACKJACK</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,21 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePlayer.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="IPlayer.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Deck.cs" />
+    <Compile Include="IBlackjackPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Robot.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConsoleHelpers\ConsoleHelpers.csproj">
-      <Project>{5b5c4117-01f3-4115-b4bc-6d0b50f17481}</Project>
-      <Name>ConsoleHelpers</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

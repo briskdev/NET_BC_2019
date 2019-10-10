@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAY4_ABSTRACTION", "DAY4_AB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleHelpers", "ConsoleHelpers\ConsoleHelpers.csproj", "{5B5C4117-01F3-4115-B4BC-6D0B50F17481}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_BLACKJACK", "NET_BLACKJACK\NET_BLACKJACK.csproj", "{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5B5C4117-01F3-4115-B4BC-6D0B50F17481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5C4117-01F3-4115-B4BC-6D0B50F17481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B5C4117-01F3-4115-B4BC-6D0B50F17481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
