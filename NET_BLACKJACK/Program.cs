@@ -24,6 +24,7 @@ namespace NET_BLACKJACK
 
                     if(!ConsoleInput.GetBool("Play again? "))
                     {
+                        Environment.Exit(0);
                         break;
                     }
                 }
