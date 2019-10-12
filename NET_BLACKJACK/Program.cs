@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleHelpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,28 @@ namespace NET_BLACKJACK
     {
         static void Main(string[] args)
         {
+            try
+            { 
+                // Create a new game, start it and call game loop
+                // Ask if user would like to play another round
+                Game game = new Game();
+
+                while(true)
+                { 
+                    game.StartNewGame();
+                    game.Loop();
+
+                    if(!ConsoleInput.GetBool("Play again? "))
+                    {
+                        break;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Unexpected error: " + ex.Message);
+            }
+            Console.Read();
         }
     }
 }

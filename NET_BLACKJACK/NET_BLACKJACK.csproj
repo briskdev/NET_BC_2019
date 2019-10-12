@@ -46,13 +46,22 @@
     <Compile Include="BasePlayer.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Dealer.cs" />
     <Compile Include="Deck.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="IBlackjackPlayer.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleHelpers\ConsoleHelpers.csproj">
+      <Project>{5b5c4117-01f3-4115-b4bc-6d0b50f17481}</Project>
+      <Name>ConsoleHelpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,13 +27,6 @@ namespace NET_BLACKJACK
                     Cards.Add(new Card(rank, suit));
                 }
             }
-            //foreach(Suits s in Enum.GetValues(typeof(Suits)))
-            //{
-                //foreach (Ranks r in Enum.GetValues(typeof(Ranks)))
-                //{
-                //    Cards.Add(new Card(r, s));
-                //}
-            //}
         }
 
         // Randomly orders (shuffles) the list of cards

@@ -49,17 +49,18 @@ namespace NET_BLACKJACK
         // Returns true if player’s points is over 21, otherwise - false
         public bool IsGameCompleted()
         {
-            return CountPoints() > 21;
+            return CountPoints() >= 21;
         }
 
         // Player receives a new card from the deck. 
         // Adds card to player’s hand.
-        public void GiveCard(Card card)
+        public virtual void GiveCard(Card card)
         {
             Cards.Add(card);
         }
 
         public abstract string GetName();
+
         public abstract bool WantCard();
     }
 }
