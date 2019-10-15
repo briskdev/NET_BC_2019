@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSamples", "WebSamples", 
 		style.css = style.css
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicSample", "LogicSample\LogicSample.csproj", "{0EEBFB73-870E-4EFB-878B-934670724A43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicSample.Tests", "LogicSample.Tests\LogicSample.Tests.csproj", "{A4C0BE16-E0E4-4439-84D5-FA80EBD243C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,14 @@ Global
 		{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F259DA71-DE78-46E1-BFB5-7F00A6F7E87E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EEBFB73-870E-4EFB-878B-934670724A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EEBFB73-870E-4EFB-878B-934670724A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EEBFB73-870E-4EFB-878B-934670724A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EEBFB73-870E-4EFB-878B-934670724A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4C0BE16-E0E4-4439-84D5-FA80EBD243C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4C0BE16-E0E4-4439-84D5-FA80EBD243C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4C0BE16-E0E4-4439-84D5-FA80EBD243C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4C0BE16-E0E4-4439-84D5-FA80EBD243C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
