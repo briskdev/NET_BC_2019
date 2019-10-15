@@ -16,6 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSamples", "WebSamples", "{148A6C48-983D-4383-BEDC-0B446E044B6A}"
 	ProjectSection(SolutionItems) = preProject
 		index.html = index.html
+		javascriptsample.html = javascriptsample.html
+		script.js = script.js
 		style.css = style.css
 	EndProjectSection
 EndProject
