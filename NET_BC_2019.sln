@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSamples", "WebSamples", 
 		index.html = index.html
 		javascriptsample.html = javascriptsample.html
 		script.js = script.js
+		shop.html = shop.html
 		style.css = style.css
 	EndProjectSection
 EndProject
