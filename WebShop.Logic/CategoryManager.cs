@@ -9,12 +9,10 @@ namespace WebShop.Logic
     public class CategoryManager
     {
         private List<Category> Categories;
-        private int CurrentId;
 
         public CategoryManager()
         {
             Categories = new List<Category>();
-            CurrentId = 100;
         }
 
         public List<Category> GetAll()

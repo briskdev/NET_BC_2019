@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace WebShop.Logic.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class CategoryTests
     {
         [TestMethod]
         public void TestMethod1()
