@@ -26,5 +26,26 @@ namespace WebShop.Logic
 
             return category;
         }
+
+        public void Seed()
+        {
+            Categories.Add(new Category()
+            {
+                Id = 1,
+                Title = "Electronics"
+            });
+            Categories.Add(new Category()
+            {
+                Id = 2,
+                Title = "Phones",
+                CategoryId = 1
+            });
+            Categories.Add(new Category()
+            {
+                Id = 3,
+                Title = "TV",
+                CategoryId = 1
+            });
+        }
     }
 }
