@@ -52,5 +52,15 @@ namespace WebShop.Logic
             currentUser.Email = user.Email;
             currentUser.Password = user.Password;
         }
+
+        public void Seed()
+        {
+            Users.Add(new User()
+            {
+                Id = 1,
+                Email = "test@mail.com",
+                Password = "pass123"
+            });
+        }
     }
 }
