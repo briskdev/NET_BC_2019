@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebShop.Logic
 {
-    class ItemManager
+    public class ItemManager
     {
         private int CurrentId;
         private List<Item> Items;

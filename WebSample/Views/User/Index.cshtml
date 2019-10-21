@@ -1,0 +1,16 @@
+﻿@model List<LogicSample.User>
+@{
+    ViewData["Title"] = "User list";
+}
+
+<h2>User list</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>User name</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr><td>@user.Name</td></tr>
+    }
+</table>
