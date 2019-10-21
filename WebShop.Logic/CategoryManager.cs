@@ -36,6 +36,12 @@ namespace WebShop.Logic
             });
             Categories.Add(new Category()
             {
+                Id = 4,
+                Title = "Clothing"
+            });
+
+            Categories.Add(new Category()
+            {
                 Id = 2,
                 Title = "Phones",
                 CategoryId = 1
@@ -45,6 +51,24 @@ namespace WebShop.Logic
                 Id = 3,
                 Title = "TV",
                 CategoryId = 1
+            });
+            Categories.Add(new Category()
+            {
+                Id = 5,
+                Title = "Men",
+                CategoryId = 4
+            });
+            Categories.Add(new Category()
+            {
+                Id = 6,
+                Title = "Women",
+                CategoryId = 4
+            });
+            Categories.Add(new Category()
+            {
+                Id = 7,
+                Title = "Kid",
+                CategoryId = 4
             });
         }
     }
