@@ -12,6 +12,24 @@ namespace DAY3_ERRHNDL
 
         static void Main(string[] args)
         {
+            UserList list = new UserList();
+            list.Add("asdasd", UserProfile.Genders.Female, DateTime.Now);
+            list.Add("34dsdasd", UserProfile.Genders.Female, DateTime.Now);
+
+            UserList list2 = new UserList();
+            list2.Add("dadsasdsad", UserProfile.Genders.Female, DateTime.Now);
+            list2.Add("sadrggfg", UserProfile.Genders.Female, DateTime.Now);
+
+
+
+
+
+
+
+
+
+
+
             try
             { 
                 UserList list = new UserList();

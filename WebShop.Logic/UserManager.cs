@@ -9,11 +9,10 @@ namespace WebShop.Logic
     public class UserManager
     {
         private int CurrentId;
-        private List<User> Users;
+        private static List<User> Users = new List<User>();
 
         public UserManager()
         {
-            Users = new List<User>();
             CurrentId = 1000;
         }
 
