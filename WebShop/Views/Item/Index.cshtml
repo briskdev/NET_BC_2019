@@ -3,6 +3,11 @@
     ViewData["Title"] = "Items";
 }
 
+@if(TempData["message"] != null)
+{
+    <div class="alert alert-success">@TempData["message"]</div>
+}
+
 <div class="row">
     <div class="col-sm-4">
         @foreach(var category in Model.Categories.FindAll(c => !c.CategoryId.HasValue))

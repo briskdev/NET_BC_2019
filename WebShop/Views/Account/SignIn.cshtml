@@ -5,7 +5,12 @@
 
 <h2>SignIn</h2>
 
-@TempData["message"]
+@Html.ValidationSummary()
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success">@TempData["message"]</div>
+}
 
 <form class="form-horizontal" method="post" action="SignIn">
     <div class="form-group">

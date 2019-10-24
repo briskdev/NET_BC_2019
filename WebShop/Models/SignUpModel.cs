@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace WebShop.Models
 {
-    public class UserModel
+    public class SignUpModel : UserModel
     {
         [Required]
-        [DataType(DataType.EmailAddress)]
-        [MaxLength(100)]
-        public string Email { get; set; }
-
-        [Required]
         [DataType(DataType.Password)]
-        [MinLength(8)]
-        public string Password { get; set; }
+        [Compare(nameof(Password))]
+        public string PasswordRepeat { get; set; }
     }
 }

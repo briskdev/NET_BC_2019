@@ -18,7 +18,8 @@ namespace WebShop.Controllers
         [HttpPost]
         public IActionResult SignIn(UserModel model)
         {
-            ModelState.Remove("PasswordRepeat");
+            // ja izmanto reģistrācijas modeli:
+            // ModelState.Remove("PasswordRepeat");
 
             if(ModelState.IsValid)
             {
@@ -44,7 +45,7 @@ namespace WebShop.Controllers
         }
 
         [HttpPost]
-        public IActionResult SignUp(UserModel model)
+        public IActionResult SignUp(SignUpModel model)
         {
             if(ModelState.IsValid)
             {
