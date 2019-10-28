@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_BLACKJACK", "NET_BLACKJ
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSamples", "WebSamples", "{148A6C48-983D-4383-BEDC-0B446E044B6A}"
 	ProjectSection(SolutionItems) = preProject
+		ads.html = ads.html
+		ads.txt = ads.txt
 		index.html = index.html
 		javascriptsample.html = javascriptsample.html
 		script.js = script.js
@@ -30,9 +32,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.Logic", "WebShop.Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop.Logic.Tests", "WebShop.Logic.Tests\WebShop.Logic.Tests.csproj", "{6755465B-6451-40E8-A4F5-71BC0A51740F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSample", "WebSample\WebSample.csproj", "{7E30C0A0-D190-485E-A1C2-FF809A453B03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSample", "WebSample\WebSample.csproj", "{7E30C0A0-D190-485E-A1C2-FF809A453B03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebShop", "WebShop\WebShop.csproj", "{C58704D1-6EF1-47C4-9DEA-FFC25D78DA97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebShop", "WebShop\WebShop.csproj", "{C58704D1-6EF1-47C4-9DEA-FFC25D78DA97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
