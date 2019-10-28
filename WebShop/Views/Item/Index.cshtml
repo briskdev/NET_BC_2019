@@ -44,7 +44,9 @@
                             <div class="caption text-center">
                                 <h3>@item.Title</h3>
                                 <p>Price: <span>$@item.Price</span></p>
-                                <p><a href="#" class="btn btn-primary" role="button">Add to cart</a></p>
+                                <p>
+                                    <a asp-controller="Item" asp-action="Buy" asp-route-id="@item.Id" class="btn btn-primary" role="button">Add to cart</a>
+                                </p>
                             </div>
                         </div>
                     </div>

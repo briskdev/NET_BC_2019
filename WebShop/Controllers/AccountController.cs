@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Logic;
 using WebShop.Models;
@@ -31,6 +32,9 @@ namespace WebShop.Controllers
                 }
                 else
                 {
+                    HttpContext.Session.SetUserId(user.Id);
+                    HttpContext.Session.SetUserEmail(user.Email);
+
                     TempData["message"] = "You have successfully signed in!";
                     return RedirectToAction("Index", "Item");
                 }
@@ -70,6 +74,13 @@ namespace WebShop.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult SignOut()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Index", "Item");
         }
     }
 }
