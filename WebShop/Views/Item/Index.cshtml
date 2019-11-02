@@ -22,7 +22,7 @@
                        asp-controller="Item" 
                        asp-action="Index" 
                        asp-route-id="@subcategory.Id">
-                        @subcategory.Title <span class="badge">4</span>
+                        @subcategory.Title <span class="badge">@subcategory.ItemCount</span>
                     </a>
                 }
             </div>

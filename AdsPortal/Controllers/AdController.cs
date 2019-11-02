@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AdsPortal.Logic;
+using AdsPortal.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdsPortal.Controllers
@@ -32,7 +33,24 @@ namespace AdsPortal.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            AdModel model = new AdModel();
+            CategoryManager categoryManager = new CategoryManager();
+            categoryManager.Seed();
+            model.Email = HttpContext.Session.GetUserEmail();
+            model.Categories = categoryManager.GetAll();
+
+            return View(model);
+        }
+        
+        [HttpPost]
+        public IActionResult Create(AdModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                // TODO: ieraksta saglabāšana
+            }
+
+            return View(model);
         }
     }
 }

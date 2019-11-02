@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebShop.Logic
+namespace AdsPortal.Logic
 {
     /// <summary>
     /// Kategorijas dati
@@ -27,11 +26,5 @@ namespace WebShop.Logic
         /// Ja nav definēts - pamatkategorija.
         /// </summary>
         public int? CategoryId { get; set; }
-
-        /// <summary>
-        /// Virtuāla kolona - preču skaits
-        /// </summary>
-        [NotMapped]
-        public int ItemCount { get; set; }
     }
 }

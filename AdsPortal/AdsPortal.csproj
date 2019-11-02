@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdsPortal.Logic\AdsPortal.Logic.csproj" />
+    <ProjectReference Include="..\AdsPortalLogic\AdsPortalLogic.csproj" />
   </ItemGroup>
 
 </Project>

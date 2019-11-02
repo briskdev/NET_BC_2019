@@ -4,57 +4,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebShop.Logic
+namespace AdsPortal.Logic
 {
     public class UserManager
     {
-        WebShopDb _db;
+        private int CurrentId;
+        private static List<User> Users = new List<User>();
 
-        public UserManager(WebShopDb db)
+        public UserManager()
         {
-            _db = db;
+            CurrentId = 1000;
         }
 
         public User GetByEmailAndPassword(string email, string password)
         {
-            var user = _db.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            var user = Users.Find(u => u.Email == email && u.Password == password);
 
             return user;
         }
 
         public User Create(User user)
         {
-            _db.Users.Add(user);
-            _db.SaveChanges();
+            user.Id = CurrentId;
+            Users.Add(user);
+            CurrentId++;
 
             return user;
         }
 
         public User GetByEmail(string email)
         {
-            var user = _db.Users.FirstOrDefault(u => u.Email == email);
+            var user = Users.Find(u => u.Email == email);
 
             return user;
         }
 
         public void Delete(int id)
         {
-            var user = _db.Users.FirstOrDefault(u => u.Id == id);
-            _db.Users.Remove(user);
-            _db.SaveChanges();
+            var user = Users.Find(u => u.Id == id);
+            Users.Remove(user);
         }
 
         public void Update(User user)
         {
-            var currentUser = _db.Users.FirstOrDefault(u => u.Id == user.Id);
+            var currentUser = Users.Find(u => u.Id == user.Id);
             currentUser.Email = user.Email;
             currentUser.Password = user.Password;
-
-            _db.SaveChanges();
         }
 
         public void Seed()
         {
+            Users.Add(new User()
+            {
+                Id = 1,
+                Email = "test@mail.com",
+                Password = "pass123"
+            });
         }
     }
 }

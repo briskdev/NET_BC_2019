@@ -9,16 +9,16 @@ namespace AdsPortal.Controllers
 {
     public class CategoryController : Controller
     {
-        private CategoryManager manager = new CategoryManager();
+        private CategoryManager _manager;
 
-        public CategoryController()
+        public CategoryController(CategoryManager manager)
         {
-            manager.Seed();
+            _manager = manager;
         }
 
         public IActionResult Index()
         {
-            var categories = manager.GetAll();
+            var categories = _manager.GetAll();
 
             return View(categories);
         }
