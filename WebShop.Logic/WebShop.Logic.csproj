@@ -124,6 +124,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseData.cs" />
+    <Compile Include="BaseManager.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="CategoryManager.cs" />
     <Compile Include="Item.cs" />

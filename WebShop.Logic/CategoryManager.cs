@@ -3,28 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebShop.Logic
 {
-    public class CategoryManager
+    public class CategoryManager : BaseManager<Category>
     {
-        WebShopDb _db;
-
         public CategoryManager(WebShopDb db)
+            :base(db)
         {
-            _db = db;
+            
         }
 
-        public List<Category> GetAll()
+        protected override DbSet<Category> Table
         {
-            return _db.Categories.ToList();
-        }
-
-        public Category Get(int id)
-        {
-            var category = _db.Categories.FirstOrDefault(c => c.Id == id);
-
-            return category;
+            get
+            {
+                return _db.Categories;
+            }
         }
 
         public void Seed()

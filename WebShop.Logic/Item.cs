@@ -9,12 +9,8 @@ namespace WebShop.Logic
     /// <summary>
     /// Preces dati
     /// </summary>
-    public class Item
+    public class Item : BaseData
     {
-        /// <summary>
-        /// Identifikators
-        /// </summary>
-        public int Id { get; set; }
         /// <summary>
         /// Cena
         /// </summary>

@@ -28,7 +28,6 @@ namespace WebShop.Controllers
         {
             // ja izmanto reģistrācijas modeli:
             // ModelState.Remove("PasswordRepeat");
-
             if(ModelState.IsValid)
             {
                 var user = _users.GetByEmailAndPassword(model.Email, model.Password);
