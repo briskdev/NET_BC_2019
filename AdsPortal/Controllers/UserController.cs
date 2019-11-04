@@ -11,7 +11,12 @@ namespace AdsPortal.Controllers
 {
     public class UserController : Controller
     {
-        UserManager manager = new UserManager();
+        UserManager _manager;
+
+        public UserController(UserManager manager)
+        {
+            _manager = manager;
+        }
 
         public IActionResult SignIn()
         {
@@ -23,7 +28,7 @@ namespace AdsPortal.Controllers
         {
             if(ModelState.IsValid)
             {
-                var user = manager.GetByEmailAndPassword(model.Email, model.Password);
+                var user = _manager.GetByEmailAndPassword(model.Email, model.Password);
                 if(user == null)
                 {
                     ModelState.AddModelError("error", "Nekorekts e-pasts un/vai parole!");
@@ -50,16 +55,14 @@ namespace AdsPortal.Controllers
         {
             if(ModelState.IsValid)
             {
-                UserManager manager = new UserManager();
-
-                if(manager.GetByEmail(model.Email) != null)
+                if(_manager.GetByEmail(model.Email) != null)
                 {
                     ModelState.AddModelError("error", "Šāds e-pasts jau eksistē!");
                 }
                 else
                 {
               
-                    manager.Create(new Logic.User()
+                    _manager.Create(new Logic.User()
                     {
                         Email = model.Email,
                         Password = model.Password,

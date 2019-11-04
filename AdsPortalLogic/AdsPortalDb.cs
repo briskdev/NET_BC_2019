@@ -17,5 +17,7 @@ namespace AdsPortal.Logic
         public DbSet<Ad> Ads { get; set; }
 
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }

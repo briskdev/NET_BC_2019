@@ -40,6 +40,8 @@ namespace AdsPortal
                 (db => db.UseSqlServer(Configuration.GetConnectionString("mydb")));
 
             services.AddScoped<CategoryManager>();
+            services.AddScoped<UserManager>();
+            services.AddScoped<AdManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

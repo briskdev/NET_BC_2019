@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,60 +7,31 @@ using System.Threading.Tasks;
 
 namespace AdsPortal.Logic
 {
-    public class UserManager
+    public class UserManager : BaseManager<User>
     {
-        private int CurrentId;
-        private static List<User> Users = new List<User>();
-
-        public UserManager()
+        public UserManager(AdsPortalDb db)
+            :base(db)
         {
-            CurrentId = 1000;
+            
         }
+
+        protected override DbSet<User> Table
+            => _db.Users;
 
         public User GetByEmailAndPassword(string email, string password)
         {
-            var user = Users.Find(u => u.Email == email && u.Password == password);
-
-            return user;
-        }
-
-        public User Create(User user)
-        {
-            user.Id = CurrentId;
-            Users.Add(user);
-            CurrentId++;
-
-            return user;
+            return Table.FirstOrDefault(u => u.Email == email && u.Password == password);
         }
 
         public User GetByEmail(string email)
         {
-            var user = Users.Find(u => u.Email == email);
-
-            return user;
+            return Table.FirstOrDefault(u => u.Email == email);
         }
 
-        public void Delete(int id)
-        {
-            var user = Users.Find(u => u.Id == id);
-            Users.Remove(user);
-        }
-
-        public void Update(User user)
-        {
-            var currentUser = Users.Find(u => u.Id == user.Id);
-            currentUser.Email = user.Email;
-            currentUser.Password = user.Password;
-        }
 
         public void Seed()
         {
-            Users.Add(new User()
-            {
-                Id = 1,
-                Email = "test@mail.com",
-                Password = "pass123"
-            });
+            
         }
     }
 }

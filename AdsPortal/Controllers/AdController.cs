@@ -10,23 +10,25 @@ namespace AdsPortal.Controllers
 {
     public class AdController : Controller
     {
-        AdManager manager = new AdManager();
+        AdManager _manager;
+        CategoryManager _categoryManager;
 
-        public AdController()
+        public AdController(AdManager manager, CategoryManager categoryManager)
         {
-            manager.Seed();
+            _manager = manager;
+            _categoryManager = categoryManager;
         }
         
         public IActionResult Index(int id)
         {
-            var ads = manager.GetByCategory(id);
+            var ads = _manager.GetByCategory(id);
 
             return View(ads);
         }
 
         public IActionResult View(int id)
         {
-            var ad = manager.Get(id);
+            var ad = _manager.Get(id);
 
             return View(ad);
         }
@@ -34,10 +36,9 @@ namespace AdsPortal.Controllers
         public IActionResult Create()
         {
             AdModel model = new AdModel();
-            CategoryManager categoryManager = new CategoryManager();
-            categoryManager.Seed();
+
             model.Email = HttpContext.Session.GetUserEmail();
-            model.Categories = categoryManager.GetAll();
+            model.Categories = _categoryManager.GetAll();
 
             return View(model);
         }

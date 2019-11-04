@@ -9,12 +9,8 @@ namespace AdsPortal.Logic
     /// <summary>
     /// Preces dati
     /// </summary>
-    public class Ad
+    public class Ad : BaseData
     {
-        /// <summary>
-        /// Identifikators
-        /// </summary>
-        public int Id { get; set; }
         /// <summary>
         /// Cena
         /// </summary>

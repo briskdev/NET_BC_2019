@@ -9,12 +9,8 @@ namespace AdsPortal.Logic
     /// <summary>
     /// Lietotāja dati
     /// </summary>
-    public class User
+    public class User : BaseData
     {
-        /// <summary>
-        /// Identifikators
-        /// </summary>
-        public int Id { get; set; }
 
         /// <summary>
         /// E-pasts
