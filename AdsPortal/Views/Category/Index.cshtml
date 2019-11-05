@@ -23,7 +23,10 @@
                 </a>
                 @foreach (var subcat in Model.Where(c => c.CategoryId == cat.Id))
                 {
-                    <a asp-controller="Ad" asp-action="Index" asp-route-id="@subcat.Id" class="list-group-item">@subcat.Title</a>
+                    <a asp-controller="Ad" asp-action="Index" asp-route-id="@subcat.Id" class="list-group-item">
+                        @subcat.Title
+                        <span class="badge">@subcat.AdCount</span>
+                    </a>
                 }
             </div>
         </div>

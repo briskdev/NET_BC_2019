@@ -42,6 +42,7 @@
                     else
                     {
                         <li><a href="#">Sveiks, @Context.Session.GetUserEmail()!</a></li>
+                        <li><a asp-controller="User" asp-action="MyAds">Mani sludinājumi</a></li>
                         <li><a asp-controller="User" asp-action="SignOut">Iziet</a></li>
                     }
                 </ul>

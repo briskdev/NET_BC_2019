@@ -5,7 +5,7 @@
 
     <ol class="breadcrumb">
         <li><a asp-controller="Category" asp-action="Index">Sludinājumi</a></li>
-        <li><a href="#">Kategorijas nosaukums</a></li>
+        <li><a asp-controller="Ad" asp-action="Index" asp-route-id="@Model.CategoryId">@Model.Category.Title</a></li>
         <li class="active">@Model.Title</li>
     </ol>
 
@@ -47,18 +47,22 @@
                 @Model.CreatedOn.ToShortDateString()
             </div>
         </div>
-        <div class="form-group clearfix">
-            <label class="col-md-4 control-label">Tālrunis:</label>
-            <div class="col-md-8">
-                @Model.Telephone
+        @* Tālruni & epastu attēlo tikai reģistrētiem lietotājiem *@
+        @if(Context.Session.GetUserId().HasValue)
+        { 
+            <div class="form-group clearfix">
+                <label class="col-md-4 control-label">Tālrunis:</label>
+                <div class="col-md-8">
+                    @Model.Telephone
+                </div>
             </div>
-        </div>
-        <div class="form-group clearfix">
-            <label class="col-md-4 control-label">E-pasts:</label>
-            <div class="col-md-8">
-                @Model.Email
+            <div class="form-group clearfix">
+                <label class="col-md-4 control-label">E-pasts:</label>
+                <div class="col-md-8">
+                    @Model.Email
+                </div>
             </div>
-        </div>
+        }
         <div class="form-group clearfix">
             <label class="col-md-4 control-label">Apraksts:</label>
             <div class="col-md-8">

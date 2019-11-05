@@ -25,6 +25,28 @@ namespace AdsPortal.Logic
             return items;
         }
 
+        public Ad GetWithCategory(int id)
+        {
+            // ar vienu JOIN pieprasījumu atlasa gan sludinājumu, gan kategoriju
+            var data = Table
+                .Where(a => a.Id == id)
+                .Join(_db.Categories, a => a.CategoryId, c => c.Id, (a, c) => new { Ad = a, Category = c }).FirstOrDefault();
+            
+            data.Ad.Category = data.Category;
+
+            return data.Ad;
+        }
+
+        /// <summary>
+        /// Sludinājumu atlase pēc lietotāja e-pasts
+        /// </summary>
+        /// <param name="email">E-pasts</param>
+        /// <returns>Saraksts ar sludinājumiem</returns>
+        public List<Ad> GetByUser(string email)
+        {
+            return Table.Where(a => a.Email == email).ToList();
+        }
+
         public void Seed()
         {
             //Ads.Add(new Ad()

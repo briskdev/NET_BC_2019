@@ -18,6 +18,17 @@ namespace AdsPortal.Logic
         protected override DbSet<Category> Table 
             => _db.Categories;
 
+        public List<Category> GetAllWithAdCount()
+        {
+            var categories = Table.ToList();
+            categories.ForEach(c =>
+            {
+                c.AdCount = _db.Ads.Count(a => a.CategoryId == c.Id);
+            });
+
+            return categories;
+        }
+
         public void Seed()
         {
             

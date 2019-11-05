@@ -11,11 +11,13 @@ namespace AdsPortal.Controllers
 {
     public class UserController : Controller
     {
-        UserManager _manager;
+        UserManager _users;
+        AdManager _ads;
 
-        public UserController(UserManager manager)
+        public UserController(UserManager manager, AdManager adManager)
         {
-            _manager = manager;
+            _users = manager;
+            _ads = adManager;
         }
 
         public IActionResult SignIn()
@@ -28,7 +30,7 @@ namespace AdsPortal.Controllers
         {
             if(ModelState.IsValid)
             {
-                var user = _manager.GetByEmailAndPassword(model.Email, model.Password);
+                var user = _users.GetByEmailAndPassword(model.Email, model.Password);
                 if(user == null)
                 {
                     ModelState.AddModelError("error", "Nekorekts e-pasts un/vai parole!");
@@ -55,14 +57,14 @@ namespace AdsPortal.Controllers
         {
             if(ModelState.IsValid)
             {
-                if(_manager.GetByEmail(model.Email) != null)
+                if(_users.GetByEmail(model.Email) != null)
                 {
                     ModelState.AddModelError("error", "Šāds e-pasts jau eksistē!");
                 }
                 else
                 {
               
-                    _manager.Create(new Logic.User()
+                    _users.Create(new Logic.User()
                     {
                         Email = model.Email,
                         Password = model.Password,
@@ -81,6 +83,13 @@ namespace AdsPortal.Controllers
             HttpContext.Session.Clear();
 
             return RedirectToAction("Index", "Category");
+        }
+
+        public IActionResult MyAds()
+        {
+            var ads = _ads.GetByUser(HttpContext.Session.GetUserEmail());
+
+            return View(ads);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,5 +48,11 @@ namespace AdsPortal.Logic
         /// E-pasts
         /// </summary>
         public string Email { get; set; }
+
+        /// <summary>
+        /// Virtuāla īpašība - Kategorijas dati
+        /// </summary>
+        [NotMapped]
+        public Category Category { get; set; }
     }
 }

@@ -1,27 +1,37 @@
-﻿@model List<Ad>
+﻿@model AdListModel
 @{
     ViewData["Title"] = "Sludinājumi";
 }
 
 <ol class="breadcrumb">
-  <li><a asp-controller="Category" asp-action="Index">Sludinājumi</a></li>
-  <li class="active">Kategorijas nosaukums</li>
+    <li><a asp-controller="Category" asp-action="Index">Sludinājumi</a></li>
+    <li class="active">@Model.Category.Title</li>
 </ol>
 
-<h2>Kategorijas nosaukums</h2>
+<h2>@Model.Category.Title</h2>
 
-<table class="table table-striped">
-    <tr>
-        <th style="width: 20%">Attēls</th>
-        <th>Apraksts</th>
-        <th style="width: 20%">Cena</th>
-    </tr>
-    @foreach(var ad in Model)
-    {
+@* Ja sludinājumu šajā kategorijā nav *@
+@if (Model.Ads.Count == 0)
+{
+    <div class="alert alert-warning">
+        Šajā kategorijā nav neviena sludinājuma
+    </div>
+}
+else
+{
+    <table class="table table-striped">
         <tr>
-            <td><img src="@ad.Photo" class="img-rounded img-responsive" /></td>
-            <td><a asp-controller="Ad" asp-action="View" asp-route-id="@ad.Id">@ad.Description</a></td>
-            <td>@String.Format("EUR {0:0.00}",ad.Price)</td>
+            <th style="width: 20%">Attēls</th>
+            <th>Apraksts</th>
+            <th style="width: 20%">Cena</th>
         </tr>
-    }
-</table>
+        @foreach (var ad in Model.Ads)
+        {
+            <tr>
+                <td><img src="@ad.Photo" class="img-rounded img-responsive" /></td>
+                <td><a asp-controller="Ad" asp-action="View" asp-route-id="@ad.Id">@ad.Description</a></td>
+                <td>@String.Format("EUR {0:0.00}", ad.Price)</td>
+            </tr>
+        }
+    </table>
+}

@@ -18,7 +18,7 @@ namespace AdsPortal.Controllers
 
         public IActionResult Index()
         {
-            var categories = _manager.GetAll();
+            var categories = _manager.GetAllWithAdCount();
 
             return View(categories);
         }

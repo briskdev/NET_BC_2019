@@ -10,25 +10,31 @@ namespace AdsPortal.Controllers
 {
     public class AdController : Controller
     {
-        AdManager _manager;
-        CategoryManager _categoryManager;
+        AdManager _ads;
+        CategoryManager _categories;
 
         public AdController(AdManager manager, CategoryManager categoryManager)
         {
-            _manager = manager;
-            _categoryManager = categoryManager;
+            _ads = manager;
+            _categories = categoryManager;
         }
         
         public IActionResult Index(int id)
         {
-            var ads = _manager.GetByCategory(id);
+            AdListModel model = new AdListModel()
+            {
+                // sludinājumi kategorijā
+                Ads = _ads.GetByCategory(id),
+                // atvērtās kategorijas dati
+                Category = _categories.Get(id)
+            };
 
-            return View(ads);
+            return View(model);
         }
 
         public IActionResult View(int id)
         {
-            var ad = _manager.Get(id);
+            var ad = _ads.GetWithCategory(id);
 
             return View(ad);
         }
@@ -37,8 +43,9 @@ namespace AdsPortal.Controllers
         {
             AdModel model = new AdModel();
 
+            // lietotāja e-pasts no profila
             model.Email = HttpContext.Session.GetUserEmail();
-            model.Categories = _categoryManager.GetAll();
+            model.Categories = _categories.GetAll();
 
             return View(model);
         }
@@ -48,9 +55,27 @@ namespace AdsPortal.Controllers
         {
             if(ModelState.IsValid)
             {
-                // TODO: ieraksta saglabāšana
+                var ad = new Ad()
+                {
+                    CategoryId = model.CategoryId,
+                    CreatedOn = DateTime.Now,
+                    Description = model.Description,
+                    Email = model.Email,
+                    Location = model.Location,
+                    Price = model.Price,
+                    Telephone = model.Telephone,
+                    Title = model.Title,
+                    Photo = model.Photo
+                };
+
+                _ads.Create(ad);
+
+                // ja viss OK, pārsūtām uz sludinājumu sadaļu
+                return RedirectToAction(nameof(Index), new { id = model.CategoryId });
             }
 
+            // kategorijas nepieciešams atlasīt arī POST pieprasījumā
+            model.Categories = _categories.GetAll();
             return View(model);
         }
     }

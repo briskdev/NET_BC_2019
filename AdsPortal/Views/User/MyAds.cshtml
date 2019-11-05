@@ -1,0 +1,35 @@
+﻿@model List<Ad>
+@{
+    ViewData["Title"] = "Mani sludinājumi";
+}
+
+<ol class="breadcrumb">
+    <li><a asp-controller="Category" asp-action="Index">Sludinājumi</a></li>
+    <li class="active">Mani sludinājumi</li>
+</ol>
+
+@* Ja sludinājumu nav *@
+@if (Model.Count == 0)
+{
+    <div class="alert alert-warning">
+        Tev nav neviena sludinājuma
+    </div>
+}
+else
+{
+    <table class="table table-striped">
+        <tr>
+            <th style="width: 20%">Attēls</th>
+            <th>Apraksts</th>
+            <th style="width: 20%">Cena</th>
+        </tr>
+        @foreach (var ad in Model)
+        {
+            <tr>
+                <td><img src="@ad.Photo" class="img-rounded img-responsive" /></td>
+                <td><a asp-controller="Ad" asp-action="View" asp-route-id="@ad.Id">@ad.Description</a></td>
+                <td>@String.Format("EUR {0:0.00}", ad.Price)</td>
+            </tr>
+        }
+    </table>
+}
